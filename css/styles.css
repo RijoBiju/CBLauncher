@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  padding: 20px;
+  margin-left: 130px;
+  margin-top: 30px;
+}
+
+.title label {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.form {
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 60px;
+}
+
+.input-field {
+  margin-top: 20px;
+}
+
+.form .input-field input {
+  border-style: none none solid none;
+  border-bottom-width: thin;
+  border-color: lightgray;
+  width: 30%;
+}
+
+.form .input-field input::placeholder {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.form .input-field input:focus {
+  outline: none;
+}
+
+.form .remember-me {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.form .remember-me label {
+  font-size: 13px;
+  padding-left: 5px;
+}
+
+.form .remember-me a {
+  font-size: 11px;
+  padding-left: 120px;
+  color: black;
+  font-weight: bold;
+}
+
+.buttons button {
+  margin-top: 30px;
+  width: 30%;
+  background-color: black;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.form .register {
+  margin-top: 30px;
+  margin-left: 60px;
+}
+
+.form .register h6 {
+  font-weight: normal;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}

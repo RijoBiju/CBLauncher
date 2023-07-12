@@ -2,7 +2,7 @@
   "name": "cblauncherv3",
   "version": "3.0.0",
   "description": "Game Launcher",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
