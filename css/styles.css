@@ -71,6 +71,12 @@
   border-radius: 8px;
   font-size: 12px;
   cursor: pointer;
+  transition-property: transform;
+  transition-duration: 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.1) perspective(0.8px);
 }
 
 .form .register {
