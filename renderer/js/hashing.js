@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 
 function hashPassword(password, callback) {
-  bcrypt.hash(password, 3, (err, hash) => {
+  bcrypt.hash(password, 10, (err, hash) => {
     if (err) {
       callback(err);
     } else {

@@ -1,5 +1,7 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const { mongoose } = require("mongoose");
+const path = require("path");
+const { addUser } = require("./renderer/js/register");
 require("dotenv").config();
 
 const createWindow = () => {
@@ -8,9 +10,14 @@ const createWindow = () => {
     width: 1200,
     height: 700,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: false,
+      contextIsolation: true,
     },
+  });
+
+  ipcMain.on("addUserToDatabase", (event, username, password) => {
+    addUser(username, password);
   });
 
   win.loadFile("./renderer/index.html");

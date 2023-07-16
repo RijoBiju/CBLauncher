@@ -9,8 +9,8 @@
 
 .title {
   padding: 20px;
-  margin-left: 130px;
-  margin-top: 30px;
+  margin-left: 110px;
+  margin-top: 70px;
 }
 
 .title label {
@@ -21,7 +21,16 @@
 .form {
   padding: 20px;
   margin-left: 50px;
-  margin-top: 50px;
+}
+
+.form #error-message {
+  font-size: 13px;
+  padding-left: 5px;
+  color: red;
+  margin-left: 25px;
+  display: inline-block;
+  width: 30%;
+  margin-bottom: 30px;
 }
 
 .input-field {
