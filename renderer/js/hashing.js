@@ -1,15 +1,20 @@
 const bcrypt = require("bcrypt");
 
-function hashPassword(password, callback) {
-  bcrypt.hash(password, 10, (err, hash) => {
+async function hashPassword(password) {
+  return await bcrypt.hash(password, 10);
+}
+
+function verifyPassword(password, hash, callback) {
+  bcrypt.compare(password, hash, (err, result) => {
     if (err) {
       callback(err);
     } else {
-      callback(null, hash);
+      callback(null, result);
     }
   });
 }
 
 module.exports = {
   hashPassword,
+  verifyPassword,
 };
