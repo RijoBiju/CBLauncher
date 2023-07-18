@@ -24,12 +24,12 @@ const createWindow = () => {
     verifyUser(username, password);
   });
 
-  win.loadFile("./renderer/index.html");
+  win.loadFile("./renderer/home/index.html");
 };
 
 app.whenReady().then(() => {
-  mongoose
-    .connect(process.env.MONGOURI)
-    .then(() => console.log("Successfully connected"));
+  // mongoose
+  //   .connect(process.env.MONGOURI)
+  //   .then(() => console.log("Successfully connected"));
   createWindow();
 });
