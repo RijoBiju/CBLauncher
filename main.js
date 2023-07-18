@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const { mongoose } = require("mongoose");
 const path = require("path");
-const { addUser } = require("./renderer/js/register");
+const { addUser, verifyUser } = require("./renderer/js/register");
 require("dotenv").config();
 
 const createWindow = () => {
@@ -16,8 +16,12 @@ const createWindow = () => {
     },
   });
 
-  ipcMain.on("addUserToDatabase", (event, username, password) => {
+  ipcMain.on("addUser", (event, username, password) => {
     addUser(username, password);
+  });
+
+  ipcMain.on("verifyUser", (event, username, password) => {
+    verifyUser(username, password);
   });
 
   win.loadFile("./renderer/index.html");

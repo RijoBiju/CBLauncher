@@ -1,31 +1,32 @@
 const { isValidUsername, isValidPassword } = require("./validation");
 const { hashPassword, verifyPassword } = require("./hashing");
-const { addUserToDatabase } = require("./storeUser");
+const { addUserToDatabase, loadHash } = require("./database");
+const { formPageError } = require("./errors");
 
-function addUser(username, password) {
-  if (isValidUsername(username) && isValidPassword(password)) {
-    let hashedPassword = hashPassword(password);
-    if (hashedPassword) {
-      addUserToDatabase(username, hashedPassword);
-    } else {
-    }
-  } else {
+async function addUser(username, password) {
+  if (!(isValidUsername(username) && isValidPassword(password))) {
+    formPageError("Username or Password requirement not met");
+    return;
   }
+  let hashedPassword = await hashPassword(password);
+  addUserToDatabase(username, hashedPassword);
 }
 
-function verifyUser(username, password) {
-  if (isValidUsername(username) && isValidPassword(password)) {
-    hashPassword(password, (err, hash) => {
-      if (err) {
-        //handle
-      }
-      if (hash) {
-        verifyPassword(password);
-        addUserToDatabase(username, hash);
-      }
-    });
-  } else {
+async function verifyUser(username, password) {
+  if (!(isValidUsername(username) && isValidPassword(password))) {
+    formPageError("Username or Password requirement not met");
+    return;
   }
+  let hash = await loadHash(username);
+  if (!hash) {
+    formPageError("Check internet connection");
+    return;
+  }
+  if (!(await verifyPassword(password, hash))) {
+    formPageError("Password is incorrect");
+    return;
+  }
+  console.log("Valid account");
 }
 
 module.exports = {

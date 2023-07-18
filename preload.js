@@ -1,7 +1,11 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  addUserToDatabase: (username, password) =>
-    ipcRenderer.send("addUserToDatabase", username, password),
-  handleError: (callback) => ipcRenderer.on("handleError", callback),
+  addUser: (username, password) =>
+    ipcRenderer.send("addUser", username, password),
+
+  verifyUser: (username, password) =>
+    ipcRenderer.send("verifyUser", username, password),
+
+  handleError: (callback) => ipcRenderer.on("error-message", callback),
 });
