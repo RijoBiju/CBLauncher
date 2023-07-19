@@ -16,6 +16,7 @@
     "apicalypse": "^0.2.0",
     "bcrypt": "^5.1.0",
     "dotenv": "^16.3.1",
+    "electron-store": "^8.1.0",
     "mongoose": "^7.3.4"
   }
 }
