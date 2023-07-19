@@ -2,6 +2,7 @@ const { isValidUsername, isValidPassword } = require("./validation");
 const { hashPassword, verifyPassword } = require("./hashing");
 const { addUserToDatabase, loadHash } = require("./database");
 const { formPageError } = require("./errors");
+const { BrowserWindow } = require("electron");
 
 async function addUser(username, password) {
   if (!(isValidUsername(username) && isValidPassword(password))) {
@@ -26,7 +27,8 @@ async function verifyUser(username, password) {
     formPageError("Password is incorrect");
     return;
   }
-  console.log("Valid account");
+  let win = BrowserWindow.getFocusedWindow();
+  win.loadFile("./renderer/home/index.html");
 }
 
 module.exports = {

@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  background-color: rgb(27, 27, 27);
 }
 
 .nav {
@@ -28,27 +29,36 @@
 }
 
 .nav .nav-items .nav-left img {
-  height: 90%;
-  width: 90px;
+  margin-left: 25px;
+  height: 40%;
+  width: 45px;
+  object-fit: fill;
 }
 
 .nav .nav-items .nav-left label {
   width: 15%;
   height: 35%;
   margin-left: 10px;
+  color: white;
 }
 
 .nav .nav-items .nav-left input {
-  border-radius: 5px;
+  border-radius: 10px;
   width: 53%;
   height: 45%;
-  background-color: transparent;
-  padding-left: 40px;
+  background-color: rgb(169, 169, 169);
+  padding-left: 20px;
   margin-left: 30px;
+  opacity: 0.8;
+}
+
+.nav .nav-items .nav-left input::placeholder {
+  color: white;
 }
 
 .nav .nav-items .nav-right {
   display: flex;
+  align-items: center;
   width: 15%;
 }
 
@@ -56,12 +66,14 @@
   height: 40px;
   width: 50px;
   border-radius: 20px;
+  border-style: none;
 }
 
 .nav .nav-items .nav-right label {
-  height: 40px;
+  height: 30px;
   width: 100%;
   margin-left: 20px;
+  color: white;
 }
 
 .enclosure {
@@ -71,29 +83,63 @@
 .sidebar {
   margin-left: 30px;
   margin-top: 40px;
-  width: 12%;
+  width: 15%;
 }
 
 .sidebar .sidebar-items .top button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 10px;
   margin-top: 20px;
-  width: 80px;
+  width: 100%;
   height: 40px;
   background-color: transparent;
   border-radius: 5px;
-  border-style: none none none solid;
-  border-left-color: darkorange;
+  border-style: none none none none;
   border-left-width: thick;
+  color: white;
+  transition-property: color border-left-color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.sidebar .sidebar-items .top img {
+  padding-right: 10px;
+}
+
+.sidebar .sidebar-items .top button:focus {
+  border-left-color: darkorange;
+  color: darkorange;
+  border-left-style: solid;
 }
 
 .sidebar .sidebar-items .bottom button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 10px;
   margin-top: 310px;
-  width: 80px;
+  width: 100%;
   height: 40px;
   background-color: transparent;
   border-radius: 5px;
-  border-style: none none none solid;
-  border-left-color: darkorange;
+  border-style: none none none none;
   border-left-width: thick;
+  color: white;
+  transition-property: color border-left-color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+.sidebar .sidebar-items .bottom img {
+  padding-right: 10px;
+}
+
+.sidebar .sidebar-items .bottom button:focus {
+  border-left-color: darkorange;
+  color: darkorange;
+  border-left-style: solid;
 }
 
 .showcase {
