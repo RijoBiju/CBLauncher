@@ -144,12 +144,75 @@
 
 .showcase {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+}
+
+.showcase .love {
+  display: grid;
+  height: 65%;
+  grid-template-areas:
+    "first second"
+    "first third";
+}
+
+.showcase .love .first {
+  grid-area: first;
+  background-color: blue;
+  width: 100%;
+  height: 95%;
+  margin-top: 30px;
+  margin-left: 40px;
+  border-radius: 10px;
+}
+
+.showcase .love .second {
+  grid-area: second;
+  background-color: blue;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 70px;
+  width: 70%;
+  height: 90%;
+}
+
+.showcase .love .third {
+  grid-area: third;
+  background-color: blue;
+  border-radius: 10px;
+  width: 70%;
+  height: 90%;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+
+.showcase label {
+  color: white;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.showcase .popular {
+  display: flex;
+  margin-left: 40px;
+  height: 50%;
+}
+
+.showcase .popular button {
+  margin-right: 20px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* .showcase {
+  display: flex;
   width: 100%;
 }
 
 .showcase .main-game {
-  width: 60%;
-  height: 80%;
+  width: 53%;
+  height: 55%;
   margin-top: 40px;
   margin-left: 40px;
   border-radius: 10px;
@@ -161,24 +224,19 @@
 
 .showcase .game-details .main-game-info {
   width: 90%;
-  height: 60%;
+  height: 25%;
   margin-left: 20px;
-  margin-top: 40px;
+  margin-top: 55px;
   border-radius: 10px;
 }
 
-.showcase .game-details .main-game-ss {
-  display: flex;
-  align-items: center;
-}
-
-.showcase .game-details .main-game-ss img {
-  width: 42%;
-  height: 90px;
-  margin-left: 23px;
+.showcase .game-details .main-game-ss .third-game {
+  width: 90%;
+  height: 120px;
+  margin-left: 20px;
   margin-top: 10px;
   border-radius: 10px;
-}
+} */
 
 /* .order {
   display: flex;

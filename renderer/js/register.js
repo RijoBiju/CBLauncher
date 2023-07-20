@@ -3,8 +3,6 @@ const { hashPassword, verifyPassword } = require("./hashing");
 const { addUserToDatabase, loadHash } = require("./database");
 const { formPageError } = require("./errors");
 const { BrowserWindow } = require("electron");
-const { authenticate, games } = require("./igdb");
-const { retrieveItem } = require("../js/models/Store");
 
 async function addUser(username, password) {
   if (!(isValidUsername(username) && isValidPassword(password))) {
@@ -29,8 +27,6 @@ async function verifyUser(username, password) {
     formPageError("Password is incorrect");
     return;
   }
-  authenticate();
-  games();
   let win = BrowserWindow.getFocusedWindow();
   win.loadFile("./renderer/home/index.html");
 }
