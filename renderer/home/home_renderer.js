@@ -33,3 +33,16 @@ settingImage.addEventListener("click", () => {
 settingImage.addEventListener("blur", () => {
   document.querySelector("#setting-image").src = "../../assets/setting.png";
 });
+
+let imageDocuments = [".first img", ".second img", ".third img"];
+window.electronAPI.handleImage((event, urls) => {
+  console.log("hey there");
+  imageDocuments.forEach((item, index) => {
+    console.log(item, urls[index]);
+    let temp_doc = document.querySelector(item);
+    url = urls[index];
+    console.log(url.replace("//", "https://"));
+    temp_doc.setAttribute("src", url.replace("//", "https://"));
+    console.log(item, urls[index]);
+  });
+});

@@ -4,7 +4,7 @@ const { storeItem, retrieveItem } = require("./models/Store");
 let clientId = process.env.IGDB_CLIENT_ID;
 let clientSecret = process.env.IGDB_CLIENT_SECRET;
 
-function authenticate() {
+function authorizeIGDB() {
   let access_token = retrieveItem("access_token");
   if (!access_token) {
     let url =
@@ -19,6 +19,7 @@ function authenticate() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         storeItem("access_token", data.access_token);
         storeItem("expires_in", data.expires_in);
       })
@@ -26,9 +27,9 @@ function authenticate() {
   }
 }
 
-function IGDBPost(url, data) {
+async function igdbPost(url, data) {
   let access_token = retrieveItem("access_token");
-  fetch(url, {
+  return await fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -39,15 +40,10 @@ function IGDBPost(url, data) {
       ),
     },
     body: data,
-  })
-    .then((response) => console.log(response.json()))
-    .then((data) => console.log(data))
-    .catch((err) => {
-      console.error(err);
-    });
+  });
 }
 
 module.exports = {
-  authenticate,
-  IGDBPost,
+  authorizeIGDB,
+  igdbPost,
 };

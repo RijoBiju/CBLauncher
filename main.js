@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const { mongoose } = require("mongoose");
 const path = require("path");
 const { addUser, verifyUser } = require("./renderer/js/register");
+const { getGames } = require("./renderer/js/homepage");
 require("dotenv").config();
 
 const createWindow = () => {
@@ -21,15 +22,18 @@ const createWindow = () => {
   });
 
   ipcMain.on("verifyUser", (event, username, password) => {
-    verifyUser(username, password);
+    if (verifyUser(username, password))
+      win.loadFile("./renderer/home/home_index.html");
+    getGames();
   });
 
-  win.loadFile("./renderer/home/index.html");
+  win.loadFile("./renderer/login_index.html");
 };
 
 app.whenReady().then(() => {
-  // mongoose
-  //   .connect(process.env.MONGOURI)
-  //   .then(() => console.log("Successfully connected"));
+  mongoose
+    .connect(process.env.MONGOURI)
+    .then(() => console.log("Successfully connected"))
+    .catch((err) => console.log(err));
   createWindow();
 });

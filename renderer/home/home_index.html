@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./home_style.css" />
     <meta charset="UTF-8" />
     <title>CBLauncher</title>
   </head>
@@ -40,19 +40,29 @@
         </ul>
       </div>
       <div class="showcase">
-        <div class="love">
-          <button class="first"></button>
-          <button class="second"></button>
-          <button class="third"></button>
+        <div class="flex-container">
+          <button class="first">
+            <img />
+          </button>
+          <div class="showcase-2">
+            <div class="fix">
+              <button class="second">
+                <img />
+              </button>
+            </div>
+            <button class="third">
+              <img />
+            </button>
+          </div>
         </div>
-        <label>Popular</label>>
-        <div class="popular">
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+        <div class="popular-games">
+          <label>Popular Games</label>
+          <div class="games">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
         </div>
       </div>
       <!-- <div class="showcase">
@@ -66,6 +76,6 @@
       </div>
       <div class="popular-games"></div> -->
     </div>
-    <script defer src="./renderer.js"></script>
+    <script defer src="./home_renderer.js"></script>
   </body>
 </html>

@@ -27,8 +27,7 @@ async function verifyUser(username, password) {
     formPageError("Password is incorrect");
     return;
   }
-  let win = BrowserWindow.getFocusedWindow();
-  win.loadFile("./renderer/home/index.html");
+  return true;
 }
 
 module.exports = {

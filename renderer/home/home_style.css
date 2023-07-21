@@ -143,6 +143,93 @@
 }
 
 .showcase {
+  width: 100%;
+}
+
+.showcase .flex-container {
+  display: flex;
+  height: 300px;
+}
+
+.showcase .flex-container::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.showcase .flex-container .first {
+  width: 60%;
+  height: 90%;
+  margin-top: 10px;
+  margin-left: 40px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.showcase .flex-container .first img {
+  width: 100%;
+  height: 100%;
+}
+
+.showcase .flex-container .showcase-2 {
+  width: 40%;
+  height: 90%;
+}
+
+.showcase .flex-container .showcase-2 .fix {
+  display: flex;
+  height: 50%;
+}
+
+.showcase .flex-container .showcase-2 .fix .second {
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.showcase .flex-container .showcase-2 .fix .second img {
+  width: 100%;
+  height: 100%;
+}
+
+.showcase .flex-container .showcase-2 .third {
+  width: 60%;
+  height: 40%;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.showcase .flex-container .showcase-2 .third img {
+  width: 100%;
+  height: 100%;
+}
+
+.showcase .popular-games {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.showcase .popular-games label {
+  color: white;
+}
+
+.showcase .popular-games .games {
+  display: flex;
+  height: 210px;
+  margin-top: 10px;
+}
+
+.showcase .popular-games .games button {
+  width: 150px;
+  height: 210px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* .showcase {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -203,7 +290,7 @@
   margin-right: 20px;
   width: 50%;
   border-radius: 10px;
-}
+} */
 
 /* .showcase {
   display: flex;
