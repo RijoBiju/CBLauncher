@@ -16,6 +16,8 @@ loginBridge = {
 
 homeBridge = {
   handleImage: (callback) => ipcRenderer.on("load-image", callback),
+
+  handlePopular: (callback) => ipcRenderer.on("load-popular", callback),
 };
 
 if (location.href.endsWith("home_index.html")) {

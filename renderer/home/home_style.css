@@ -144,6 +144,47 @@
 
 .showcase {
   width: 100%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.showcase .top {
+  height: 50%;
+}
+
+.showcase .top button {
+  width: 15%;
+  height: 95%;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.showcase .top button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.showcase .bottom {
+  height: 50%;
+  margin-top: 30px;
+}
+
+.showcase .bottom button {
+  width: 15%;
+  height: 95%;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.showcase .bottom button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* .showcase {
+  width: 100%;
 }
 
 .showcase .flex-container {
@@ -169,6 +210,7 @@
 .showcase .flex-container .first img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .showcase .flex-container .showcase-2 {
@@ -192,6 +234,7 @@
 .showcase .flex-container .showcase-2 .fix .second img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .showcase .flex-container .showcase-2 .third {
@@ -205,6 +248,7 @@
 .showcase .flex-container .showcase-2 .third img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .showcase .popular-games {
@@ -228,6 +272,13 @@
   border-radius: 10px;
   margin-right: 20px;
 }
+
+.showcase .popular-games .games button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 20px;
+} */
 
 /* .showcase {
   display: flex;

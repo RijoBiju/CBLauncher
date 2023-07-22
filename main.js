@@ -24,7 +24,7 @@ const createWindow = () => {
   ipcMain.on("verifyUser", (event, username, password) => {
     if (verifyUser(username, password))
       win.loadFile("./renderer/home/home_index.html");
-    getGames();
+    // getGames();
   });
 
   win.loadFile("./renderer/login_index.html");

@@ -34,13 +34,21 @@ settingImage.addEventListener("blur", () => {
   document.querySelector("#setting-image").src = "../../assets/setting.png";
 });
 
-let imageDocuments = document.querySelectorAll(".game-image");
-window.electronAPI.handleImage((event, urls) => {
+function setImages(docs, urls) {
+  console.log(urls);
   urls.forEach((item, index) => {
-    url = item.replace("//", "https://");
-    imageDocuments[index].setAttribute(
-      "src",
-      url.replace("t_thumb", "t_screenshot_big")
-    );
+    console.log(item);
+    url = item.url.replace("//", "https://");
+    docs[index].setAttribute("src", url.replace("t_thumb", "t_1080p"));
   });
+}
+
+window.electronAPI.handleImage((event, urls) => {
+  let imageDocuments = document.querySelectorAll(".game-image");
+  setImages(imageDocuments, urls);
+});
+
+window.electronAPI.handlePopular((event, urls) => {
+  let imageDocuments = document.querySelectorAll(".cb-image");
+  setImages(imageDocuments, urls);
 });
