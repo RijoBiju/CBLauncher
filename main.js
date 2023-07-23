@@ -3,6 +3,7 @@ const { mongoose } = require("mongoose");
 const path = require("path");
 const { addUser, verifyUser } = require("./renderer/js/register");
 const { getGames } = require("./renderer/js/homepage");
+const { searchGames } = require("./renderer/js/homepage");
 require("dotenv").config();
 
 const createWindow = () => {
@@ -25,6 +26,10 @@ const createWindow = () => {
     if (verifyUser(username, password))
       win.loadFile("./renderer/home/home_index.html");
     // getGames();
+  });
+
+  ipcMain.on("searchGames", (event, searchString) => {
+    searchGames(searchString);
   });
 
   win.loadFile("./renderer/login_index.html");

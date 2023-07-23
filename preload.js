@@ -18,6 +18,11 @@ homeBridge = {
   handleImage: (callback) => ipcRenderer.on("load-image", callback),
 
   handlePopular: (callback) => ipcRenderer.on("load-popular", callback),
+
+  searchGames: (searchString) => {
+    console.log("hey there");
+    ipcRenderer.send("searchGames", searchString);
+  },
 };
 
 if (location.href.endsWith("home_index.html")) {

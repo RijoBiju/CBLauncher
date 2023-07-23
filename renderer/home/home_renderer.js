@@ -52,3 +52,8 @@ window.electronAPI.handlePopular((event, urls) => {
   let imageDocuments = document.querySelectorAll(".cb-image");
   setImages(imageDocuments, urls);
 });
+
+function search(searchString) {
+  console.log("hey");
+  window.electronAPI.searchGames(searchString);
+}

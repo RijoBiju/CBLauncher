@@ -11,7 +11,11 @@
         <div class="nav-left">
           <img src="../../assets/cb.png" width="40" height="40" />
           <label>CBLauncher</label>
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            oninput="search((this.value).toLowerCase())"
+          />
         </div>
         <div class="nav-right">
           <img />

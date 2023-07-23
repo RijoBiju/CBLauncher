@@ -27,6 +27,30 @@ function getCoverUrl(gameId) {
     });
 }
 
+function searchGames(searchString) {
+  console.log("search '{}'; fields name, cover;".replace("{}", searchString));
+  igdbPost(
+    "https://api.igdb.com/v4/games",
+    'search "{}"; fields name, category, version_parent; where category = 0 & version_parent = null;'.replace(
+      "{}",
+      searchString
+    )
+  )
+    .then((response) => response.json())
+    .then(async (data) => {
+      console.log(data);
+      let ids = await data.map((game_id) => game_id.id);
+      // let first_set = ids.slice(0, 3);
+      // let second_set = ids.slice(3, 8);
+      // getCoverUrl(first_set);
+      // getCoverUrl(second_set);
+      getCoverUrl(ids);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
 function getGames() {
   igdbPost(
     "https://api.igdb.com/v4/games",
@@ -48,4 +72,5 @@ function getGames() {
 
 module.exports = {
   getGames,
+  searchGames,
 };
